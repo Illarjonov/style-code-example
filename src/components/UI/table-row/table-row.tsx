@@ -6,10 +6,11 @@ type TableCaseProps = {
     latitude: string;
 }
 // элемент таблицы
-export const TableCase = ({ name, iata, longitude, latitude }: TableCaseProps) => {
+export const TableRow = ({ name, iata, longitude, latitude }: TableCaseProps) => {
+    const isIata = iata.length > 0 ? ` & ${iata}` : ''
     return <div className={s.row}>
         <div className={s.nameIata}>
-            <p> {name}  {iata && `& ${iata}` } </p>
+            <p> {name + isIata}  </p>
         </div>
         <div>
             <div> {latitude} </div>
