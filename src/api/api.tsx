@@ -32,6 +32,7 @@ export interface Data {
     region: string;
     timezone: string;
 }
+
 export const API = {
     async searchAirport(name?: string, code?: string, offset?: number) {
         try {

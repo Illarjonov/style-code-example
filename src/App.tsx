@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { API, Data } from './api/api';
+import { Airport } from './components/airport/airport';
 
 function App() {
   const [data, setData] = useState<Data[]>([])
-  
+
   useEffect(() => {
     API.searchAirport() //fetch by default
       .then((res: any) => {
@@ -16,9 +17,11 @@ function App() {
 
   return (
     <div className="App">
-      fds
+      
+      <div>
+        {data.map((item, index) => <Airport data={item} key={index} />)}
+      </div>
     </div>
   )
 }
-
 export default App
