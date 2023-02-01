@@ -5,7 +5,7 @@ type TableCaseProps = {
     longitude: string;
     latitude: string;
 }
-
+// элемент таблицы
 export const TableCase = ({ name, iata, longitude, latitude }: TableCaseProps) => {
     return <div className={s.row}>
         <div className={s.nameIata}>

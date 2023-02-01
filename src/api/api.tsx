@@ -40,7 +40,6 @@ export const API = {
             const queryName = name ? `name=${name}` : ""
             const queryCode = code ? `iata=${code}` : ""
             
-            console.log(name, code)
             const url = `v1/airports?${queryName}${queryCode}&country=US`
             const req = instance.get(url)
             return req

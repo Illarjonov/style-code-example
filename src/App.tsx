@@ -7,7 +7,7 @@ import { AirpotList } from "./components/airport-list/airport-list";
 function App() {
   const [data, setData] = useState<Data[]>([])
 
-  const fetchByDefault = () => {
+  const fetchByDefault = () => { // Первый поиск по дефолту
     API.searchAirport()
       .then((res: any) => {
         if (res.status === 200) {
