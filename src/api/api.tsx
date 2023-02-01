@@ -1,13 +1,13 @@
-import * as axios from 'axios'
+import * as axios from "axios"
 
-const apiURL = 'https://airports-by-api-ninjas.p.rapidapi.com'
+const apiURL = "https://airports-by-api-ninjas.p.rapidapi.com"
 
 const instance = axios.default.create({
     baseURL: apiURL,
     headers: {
-        Accept: 'application/json',
-        'X-RapidAPI-Key': '4b3d50217bmsh5fd912f66f1e90fp112a84jsnd0835779ceda',
-        'X-RapidAPI-Host': 'airports-by-api-ninjas.p.rapidapi.com'
+        Accept: "application/json",
+        "X-RapidAPI-Key": "4b3d50217bmsh5fd912f66f1e90fp112a84jsnd0835779ceda",
+        "X-RapidAPI-Host": "airports-by-api-ninjas.p.rapidapi.com"
     },
 })
 
@@ -36,9 +36,9 @@ export interface Data {
 export const API = {
     async searchAirport(name?: string, code?: string) {
         try {
-            //query params
-            const queryName = name ? `name=${name}` : ''
-            const queryCode = code ? `iata=${code}` : ''
+            //query params обычно приходит одно из двух
+            const queryName = name ? `name=${name}` : ""
+            const queryCode = code ? `iata=${code}` : ""
             
             console.log(name, code)
             const url = `v1/airports?${queryName}${queryCode}&country=US`

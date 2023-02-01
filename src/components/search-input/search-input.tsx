@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react"
 import { API, Data } from "../../api/api";
 import React from "react";
-import s from './search-input.module.css';
+import s from "./search-input.module.css";
 
 type SearchInputProps = {
     setData: React.Dispatch<React.SetStateAction<Data[]>>;

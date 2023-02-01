@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import { API, Data } from './api/api';
-import { SearchInput } from './components/search-input/search-input';
-import { AirpotList } from './components/airport-list/airport-list';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import { API, Data } from "./api/api";
+import { SearchInput } from "./components/search-input/search-input";
+import { AirpotList } from "./components/airport-list/airport-list";
 
 function App() {
   const [data, setData] = useState<Data[]>([])

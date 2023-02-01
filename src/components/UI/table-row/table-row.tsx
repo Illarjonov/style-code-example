@@ -1,4 +1,4 @@
-import s from './table-row.module.css'
+import s from "./table-row.module.css"
 type TableCaseProps = {
     name: string;
     iata: string;
