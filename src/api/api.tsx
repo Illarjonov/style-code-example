@@ -42,7 +42,7 @@ export const API = {
             const queryOffset = offset ? `&offset=${offset}` : ''
 
             const url = `v1/airports?country=US${queryName}${queryCode}${queryOffset}`
-            const req = instance.get<any>(url)
+            const req = instance.get(url)
             return req
         } catch (error: any) {
             console.log(error.response)

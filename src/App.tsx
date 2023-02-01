@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import { API, Data } from './api/api';
-import { Airport } from './components/airport/airport';
 import { SearchInput } from './components/search-input/search-input';
+import { AirpotList } from './components/airport-list/airport-list';
 
 function App() {
   const [data, setData] = useState<Data[]>([])
@@ -15,17 +15,13 @@ function App() {
         }
       })
   }
-
+  
   useEffect(fetchByDefault, [])
 
   return (
     <div className="App">
-      <div>
-        <SearchInput/>
-      </div>
-      <div>
-        {data.map((item, index) => <Airport data={item} key={index} />)}
-      </div>
+        <SearchInput />
+        <AirpotList data={data} />
     </div>
   )
 }

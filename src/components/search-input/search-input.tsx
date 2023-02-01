@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import s from './search-input.module.css'
+import s from './search-input.module.scss'
 
 export const SearchInput = () => {
     const [searchText, setSearchText] = useState('')
