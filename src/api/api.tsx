@@ -34,14 +34,14 @@ export interface Data {
 }
 
 export const API = {
-    async searchAirport(name?: string, code?: string, offset?: number) {
+    async searchAirport(name?: string, code?: string) {
         try {
             //query params
-            const queryName = name ? `?name=${name}` : ''
-            const queryCode = code ? `?iata=${code}` : ''
-            const queryOffset = offset ? `&offset=${offset}` : ''
-
-            const url = `v1/airports?country=US${queryName}${queryCode}${queryOffset}`
+            const queryName = name ? `name=${name}` : ''
+            const queryCode = code ? `iata=${code}` : ''
+            
+            console.log(name, code)
+            const url = `v1/airports?${queryName}${queryCode}&country=US`
             const req = instance.get(url)
             return req
         } catch (error: any) {

@@ -8,3 +8,25 @@
     flex-direction: column;
     outline: none;
 }
+.buttons{
+    display: flex;
+    width: 840px;
+
+}
+.button{
+    border-radius: 5px;
+    padding: 5px;
+    width: 50%;
+    height: 40px;
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid #000;
+    border-top: none;
+}
+.button:hover{
+    background-color: #ccc;
+}

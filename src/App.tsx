@@ -15,12 +15,12 @@ function App() {
         }
       })
   }
-  
+
   useEffect(fetchByDefault, [])
 
   return (
     <div className="App">
-        <SearchInput />
+        <SearchInput setData={setData}/>
         <AirpotList data={data} />
     </div>
   )
