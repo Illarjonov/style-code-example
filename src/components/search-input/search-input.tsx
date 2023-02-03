@@ -18,16 +18,20 @@ export const SearchInput = ({ setData, defaultData }: SearchInputProps) => {
     const search = useCallback(async () => {
         //фильтрует дефолтный массив по совпадению 
         const filterDefaultDataBySearchText = () => {
-            return defaultData
-                .filter((obj: Data) => obj[searchType]
-                    .toLowerCase()
-                    .indexOf(searchText) > -1
-                )
+            return (
+                defaultData
+                    .filter((obj: Data) =>
+                        obj[searchType]
+                            .toLowerCase()
+                            .indexOf(searchText) > -1
+                    )
+            )
         }
 
         // Если есть совпадения, отображает, если совпадений нет, делает запрос на сервер по searchType
-        if (filterDefaultDataBySearchText().length > 0) {
-            setData(filterDefaultDataBySearchText())
+        const arrayIntersection = filterDefaultDataBySearchText() //массив совпадений с дефолтным массивом
+        if (arrayIntersection.length > 0) {
+            setData([...arrayIntersection])
         } else {
             if (searchType === "name") {
                 await API.searchAirportByName(searchText)
